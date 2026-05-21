@@ -283,47 +283,49 @@ html_content = '''<!DOCTYPE html>
             font-size: 1.2rem;
         }
 
-        /* MASONRY GALLERY – flexibla bilder i sina originalproportioner */
+        /* FLEX GALLERY – bilder i rätt ordning, rad för rad, med flexibla proportioner */
         .project-gallery {
             padding: 3rem 5%;
             max-width: 1400px;
             margin: 0 auto;
-            column-count: 2;
-            column-gap: 1.5rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            align-items: flex-start;
         }
 
         .gallery-img {
-            break-inside: avoid;
-            margin-bottom: 1.5rem;
+            flex: 1 1 calc(50% - 0.75rem);
+            min-width: 300px;
             cursor: pointer;
             overflow: hidden;
             background: #e0ddd8;
             opacity: 0;
             transform: translateY(40px);
-            animation: masonryFadeIn 0.8s ease-out forwards;
+            animation: tileFadeIn 0.7s ease-out forwards;
         }
 
-        .gallery-img:nth-child(1) { animation-delay: 0.05s; }
-        .gallery-img:nth-child(2) { animation-delay: 0.1s; }
-        .gallery-img:nth-child(3) { animation-delay: 0.15s; }
-        .gallery-img:nth-child(4) { animation-delay: 0.2s; }
-        .gallery-img:nth-child(5) { animation-delay: 0.25s; }
-        .gallery-img:nth-child(6) { animation-delay: 0.3s; }
-        .gallery-img:nth-child(7) { animation-delay: 0.35s; }
-        .gallery-img:nth-child(8) { animation-delay: 0.4s; }
-        .gallery-img:nth-child(9) { animation-delay: 0.45s; }
-        .gallery-img:nth-child(10) { animation-delay: 0.5s; }
-        .gallery-img:nth-child(11) { animation-delay: 0.55s; }
-        .gallery-img:nth-child(12) { animation-delay: 0.6s; }
-        .gallery-img:nth-child(13) { animation-delay: 0.65s; }
-        .gallery-img:nth-child(14) { animation-delay: 0.7s; }
-        .gallery-img:nth-child(15) { animation-delay: 0.75s; }
-        .gallery-img:nth-child(16) { animation-delay: 0.8s; }
-        .gallery-img:nth-child(17) { animation-delay: 0.85s; }
-        .gallery-img:nth-child(18) { animation-delay: 0.9s; }
-        .gallery-img:nth-child(19) { animation-delay: 0.95s; }
-        .gallery-img:nth-child(20) { animation-delay: 1.0s; }
-        .gallery-img:nth-child(21) { animation-delay: 1.05s; }
+        .gallery-img:nth-child(1) { animation-delay: 0.04s; }
+        .gallery-img:nth-child(2) { animation-delay: 0.08s; }
+        .gallery-img:nth-child(3) { animation-delay: 0.12s; }
+        .gallery-img:nth-child(4) { animation-delay: 0.16s; }
+        .gallery-img:nth-child(5) { animation-delay: 0.20s; }
+        .gallery-img:nth-child(6) { animation-delay: 0.24s; }
+        .gallery-img:nth-child(7) { animation-delay: 0.28s; }
+        .gallery-img:nth-child(8) { animation-delay: 0.32s; }
+        .gallery-img:nth-child(9) { animation-delay: 0.36s; }
+        .gallery-img:nth-child(10) { animation-delay: 0.40s; }
+        .gallery-img:nth-child(11) { animation-delay: 0.44s; }
+        .gallery-img:nth-child(12) { animation-delay: 0.48s; }
+        .gallery-img:nth-child(13) { animation-delay: 0.52s; }
+        .gallery-img:nth-child(14) { animation-delay: 0.56s; }
+        .gallery-img:nth-child(15) { animation-delay: 0.60s; }
+        .gallery-img:nth-child(16) { animation-delay: 0.64s; }
+        .gallery-img:nth-child(17) { animation-delay: 0.68s; }
+        .gallery-img:nth-child(18) { animation-delay: 0.72s; }
+        .gallery-img:nth-child(19) { animation-delay: 0.76s; }
+        .gallery-img:nth-child(20) { animation-delay: 0.80s; }
+        .gallery-img:nth-child(21) { animation-delay: 0.84s; }
 
         .gallery-img img {
             width: 100%;
@@ -336,7 +338,7 @@ html_content = '''<!DOCTYPE html>
             transform: scale(1.02);
         }
 
-        @keyframes masonryFadeIn {
+        @keyframes tileFadeIn {
             from { opacity: 0; transform: translateY(40px); }
             to { opacity: 1; transform: translateY(0); }
         }
@@ -603,7 +605,8 @@ html_content = '''<!DOCTYPE html>
             .nav-links { display: none; }
             .mobile-menu-btn { display: block; }
             .gallery { grid-template-columns: 1fr; }
-            .project-gallery { column-count: 1; }
+            .project-gallery { padding: 2rem 5%; }
+            .gallery-img { flex: 1 1 100%; min-width: unset; }
             .about { grid-template-columns: 1fr; }
             .contact-info { flex-direction: column; gap: 2rem; }
             .hero-content h1 { font-size: 2.2rem; }
