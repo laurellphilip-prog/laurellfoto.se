@@ -1,4 +1,5 @@
-<!DOCTYPE html>
+
+html_content = '''<!DOCTYPE html>
 <html lang="sv">
 <head>
     <meta charset="UTF-8">
@@ -115,7 +116,7 @@
         .hero-content p {
             font-size: 1.1rem;
             color: var(--text-light);
-            max-width: 500px;
+            max-width: 600px;
             margin: 0 auto 2rem;
             animation: fadeUp 1s ease-out 0.2s both;
         }
@@ -615,8 +616,8 @@
 
         <section class="hero">
             <div class="hero-content">
-                <h1>Fastighetsfotografi<br>för mäklare som vet att<br>bilderna gör skillnad</h1>
-                <p>Jag är Philip Laurell, fotograf. Jag arbetar ensam, vilket innebär att du alltid vet vem som kommer — och att bilderna hjälper dig sälja snabbare och dyrare.</p>
+                <h1>Det finns hem som kräver<br>en annan blick</h1>
+                <p>Jag är Philip Laurell. Med bakgrund i kommersiell fotografering och reklam ser jag inte bara ett rum — jag ser vad som gör det unikt och hur det ska återges. Tystnaden, ljuset, proportionerna. Jag arbetar ensam. Varje objekt får den tid det kräver.</p>
                 <a href="#contact" class="cta-btn">Boka fotografering</a>
             </div>
         </section>
@@ -636,14 +637,12 @@
             </div>
             <div class="services-grid">
                 <div class="service-card fade-in">
-                    <div class="service-icon">📷</div>
                     <h3>Interiörfotografering</h3>
-                    <p>Jag ser inte bara ett rum. Jag ser linjer, ljus och volym. Jag har utvecklat en blick för hur ett hem rör sig, hur ljuset kommer bete sig och vad som händer när man tar bort det som inte ska vara där — inklusive disktrasan. Att veta när bilden är klar är en kombination av erfarenhet och magkänsla.</p>
+                    <p>Jag har utvecklat en blick för hur ett hem rör sig och hur ljuset kommer bete sig under fotograferingens gång. Jag känner var stativet ska stå.</p>
                 </div>
                 <div class="service-card fade-in">
-                    <div class="service-icon">🏠</div>
                     <h3>Exteriörfotografering</h3>
-                    <p>Ute börjar jobbet med att städa undan slangen och få trädgårdsmöblerna att se anständiga ut. Sedan handlar det om att tänka scenografiskt — renodla bilden och låta omgivningen samspela med huset. Varje exteriörbild ska förvandla ett hus till en destination.</p>
+                    <p>Varje exteriörbild ska förvandla en fasad till en destination. Det handlar om att tänka scenografiskt — renodla bilden och låta omgivningen samspela med huset.</p>
                 </div>
             </div>
         </section>
@@ -654,7 +653,7 @@
             </div>
             <div class="about-text fade-in">
                 <h2>Om mig</h2>
-                <p>Jag är Philip Laurell, fotograf med bakgrund i reklam, hotell och arkitektur. Det ögat tar jag med mig in i varje bostad. Jag arbetar ensam i Stockholm med omnejd, vilket innebär att du alltid vet vem som kommer. Mina uppdrag sträcker sig från ettor på Stora Essingen till villor i Djursholm — jobbet är detsamma oavsett objekt.</p>
+                <p>Jag är Philip Laurell. Jag har arbetat som fotograf i decennier — med reklambyråer, arkitekter och uppdrag som tagit mig betydligt längre bort än Lidingövägen. Det ger ett öga som inte bara ser ett hem utan förstår det. Jag arbetar ensam i Stockholm med omnejd. Du vet alltid vem som kommer.</p>
             </div>
         </section>
 
@@ -668,7 +667,7 @@
                 </div>
                 <div class="contact-item">
                     <span class="label">E-post</span>
-                    <a href="mailto:hello@dittnamn.se">hello@laurellfoto.se</a>
+                    <a href="mailto:hello@laurellfoto.se">hello@laurellfoto.se</a>
                 </div>
             </div>
         </section>
@@ -701,229 +700,134 @@
     </div>
 
     <script>
-        // ========== DINA 9 PROJEKT ==========
-       const projects = [
-    {
-        id: 'objekt-01',
-        cover: 'bilder/01-stenkullavagen/omslag.jpg',
-        title: 'Stenkullavägen',
-        location: 'Stenkullavägen',
-        images: [
-            'bilder/01-stenkullavagen/01.jpg',
-            'bilder/01-stenkullavagen/02.jpg',
-            'bilder/01-stenkullavagen/03.jpg',
-            'bilder/01-stenkullavagen/04.jpg',
-            'bilder/01-stenkullavagen/05.jpg',
-            'bilder/01-stenkullavagen/06.jpg',
-            'bilder/01-stenkullavagen/07.jpg',
-            'bilder/01-stenkullavagen/08.jpg',
-            'bilder/01-stenkullavagen/09.jpg',
-            'bilder/01-stenkullavagen/10.jpg',
-            'bilder/01-stenkullavagen/11.jpg',
-            'bilder/01-stenkullavagen/12.jpg',
-            'bilder/01-stenkullavagen/13.jpg',
-            'bilder/01-stenkullavagen/14.jpg',
-            'bilder/01-stenkullavagen/15.jpg',
-            'bilder/01-stenkullavagen/16.jpg'
-        ]
-    },
-    {
-        id: 'objekt-02',
-        cover: 'bilder/02-telegrafvagen/omslag.jpg',
-        title: 'Telegrafvägen',
-        location: 'Telegrafvägen',
-        images: [
-            'bilder/02-telegrafvagen/01.jpg',
-            'bilder/02-telegrafvagen/02.jpg',
-            'bilder/02-telegrafvagen/03.jpg',
-            'bilder/02-telegrafvagen/04.jpg',
-            'bilder/02-telegrafvagen/05.jpg',
-            'bilder/02-telegrafvagen/06.jpg',
-            'bilder/02-telegrafvagen/07.jpg',
-            'bilder/02-telegrafvagen/08.jpg',
-            'bilder/02-telegrafvagen/09.jpg',
-            'bilder/02-telegrafvagen/10.jpg',
-            'bilder/02-telegrafvagen/11.jpg',
-            'bilder/02-telegrafvagen/12.jpg'
-        ]
-    },
-    {
-        id: 'objekt-03',
-        cover: 'bilder/03-ostermalmsgatan/omslag.jpg',
-        title: 'Östermalmsgatan',
-        location: 'Östermalmsgatan',
-        images: [
-            'bilder/03-ostermalmsgatan/01.jpg',
-            'bilder/03-ostermalmsgatan/02.jpg',
-            'bilder/03-ostermalmsgatan/03.jpg',
-            'bilder/03-ostermalmsgatan/04.jpg',
-            'bilder/03-ostermalmsgatan/05.jpg',
-            'bilder/03-ostermalmsgatan/06.jpg',
-            'bilder/03-ostermalmsgatan/07.jpg',
-            'bilder/03-ostermalmsgatan/08.jpg',
-            'bilder/03-ostermalmsgatan/09.jpg',
-            'bilder/03-ostermalmsgatan/10.jpg',
-            'bilder/03-ostermalmsgatan/11.jpg',
-            'bilder/03-ostermalmsgatan/12.jpg',
-            'bilder/03-ostermalmsgatan/13.jpg',
-            'bilder/03-ostermalmsgatan/14.jpg',
-            'bilder/03-ostermalmsgatan/15.jpg',
-            'bilder/03-ostermalmsgatan/16.jpg',
-            'bilder/03-ostermalmsgatan/17.jpg',
-            'bilder/03-ostermalmsgatan/18.jpg',
-            'bilder/03-ostermalmsgatan/19.jpg',
-            'bilder/03-ostermalmsgatan/20.jpg',
-            'bilder/03-ostermalmsgatan/21.jpg',
-            'bilder/03-ostermalmsgatan/22.jpg',
-            'bilder/03-ostermalmsgatan/23.jpg',
-            'bilder/03-ostermalmsgatan/24.jpg',
-            'bilder/03-ostermalmsgatan/25.jpg',
-            'bilder/03-ostermalmsgatan/26.jpg',
-            'bilder/03-ostermalmsgatan/27.jpg'
-        ]
-    },
-    {
-        id: 'objekt-04',
-        cover: 'bilder/04-djursholm/omslag.jpg',
-        title: 'Djursholm',
-        location: 'Djursholm',
-        images: [
-            'bilder/04-djursholm/01.jpg',
-            'bilder/04-djursholm/02.jpg',
-            'bilder/04-djursholm/03.jpg',
-            'bilder/04-djursholm/04.jpg',
-            'bilder/04-djursholm/05.jpg',
-            'bilder/04-djursholm/06.jpg',
-            'bilder/04-djursholm/07.jpg',
-            'bilder/04-djursholm/08.jpg',
-            'bilder/04-djursholm/09.jpg',
-            'bilder/04-djursholm/10.jpg',
-            'bilder/04-djursholm/11.jpg',
-            'bilder/04-djursholm/12.jpg',
-            'bilder/04-djursholm/13.jpg',
-            'bilder/04-djursholm/14.jpg',
-            'bilder/04-djursholm/15.jpg',
-            'bilder/04-djursholm/16.jpg',
-            'bilder/04-djursholm/17.jpg',
-            'bilder/04-djursholm/18.jpg',
-            'bilder/04-djursholm/19.jpg',
-            'bilder/04-djursholm/20.jpg',
-            'bilder/04-djursholm/21.jpg'
-        ]
-    },
-    {
-        id: 'objekt-05',
-        cover: 'bilder/05-kaptensgatan/omslag.jpg',
-        title: 'Kaptensgatan',
-        location: 'Kaptensgatan',
-        images: [
-            'bilder/05-kaptensgatan/01.jpg',
-            'bilder/05-kaptensgatan/02.jpg',
-            'bilder/05-kaptensgatan/03.jpg',
-            'bilder/05-kaptensgatan/04.jpg',
-            'bilder/05-kaptensgatan/05.jpg',
-            'bilder/05-kaptensgatan/06.jpg',
-            'bilder/05-kaptensgatan/07.jpg',
-            'bilder/05-kaptensgatan/08.jpg',
-            'bilder/05-kaptensgatan/09.jpg',
-            'bilder/05-kaptensgatan/10.jpg',
-            'bilder/05-kaptensgatan/11.jpg',
-            'bilder/05-kaptensgatan/12.jpg',
-            'bilder/05-kaptensgatan/13.jpg',
-            'bilder/05-kaptensgatan/14.jpg',
-            'bilder/05-kaptensgatan/15.jpg',
-            'bilder/05-kaptensgatan/16.jpg'
-        ]
-    },
-    {
-        id: 'objekt-06',
-        cover: 'bilder/06-bergsgatan/omslag.jpg',
-        title: 'Bergsgatan',
-        location: 'Bergsgatan',
-        images: [
-            'bilder/06-bergsgatan/01.jpg',
-            'bilder/06-bergsgatan/02.jpg',
-            'bilder/06-bergsgatan/03.jpg',
-            'bilder/06-bergsgatan/04.jpg',
-            'bilder/06-bergsgatan/05.jpg',
-            'bilder/06-bergsgatan/06.jpg',
-            'bilder/06-bergsgatan/07.jpg',
-            'bilder/06-bergsgatan/08.jpg',
-            'bilder/06-bergsgatan/09.jpg',
-            'bilder/06-bergsgatan/10.jpg',
-            'bilder/06-bergsgatan/11.jpg',
-            'bilder/06-bergsgatan/12.jpg',
-            'bilder/06-bergsgatan/13.jpg',
-            'bilder/06-bergsgatan/14.jpg'
-        ]
-    },
-    {
-        id: 'objekt-07',
-        cover: 'bilder/07-badstrandsvagen/omslag.jpg',
-        title: 'Badstrandsvägen',
-        location: 'Badstrandsvägen',
-        images: [
-            'bilder/07-badstrandsvagen/01.jpg',
-            'bilder/07-badstrandsvagen/02.jpg',
-            'bilder/07-badstrandsvagen/03.jpg',
-            'bilder/07-badstrandsvagen/04.jpg',
-            'bilder/07-badstrandsvagen/05.jpg',
-            'bilder/07-badstrandsvagen/06.jpg',
-            'bilder/07-badstrandsvagen/07.jpg',
-            'bilder/07-badstrandsvagen/08.jpg',
-            'bilder/07-badstrandsvagen/09.jpg',
-            'bilder/07-badstrandsvagen/10.jpg',
-            'bilder/07-badstrandsvagen/11.jpg',
-            'bilder/07-badstrandsvagen/12.jpg',
-            'bilder/07-badstrandsvagen/13.jpg'
-        ]
-    },
-    {
-        id: 'objekt-08',
-        cover: 'bilder/08-tessinska/omslag.jpg',
-        title: 'Tessinska',
-        location: 'Tessinska',
-        images: [
-            'bilder/08-tessinska/01.jpg',
-            'bilder/08-tessinska/02.jpg',
-            'bilder/08-tessinska/03.jpg',
-            'bilder/08-tessinska/04.jpg',
-            'bilder/08-tessinska/05.jpg',
-            'bilder/08-tessinska/06.jpg',
-            'bilder/08-tessinska/07.jpg',
-            'bilder/08-tessinska/08.jpg',
-            'bilder/08-tessinska/09.jpg',
-            'bilder/08-tessinska/10.jpg',
-            'bilder/08-tessinska/11.jpg',
-            'bilder/08-tessinska/12.jpg',
-            'bilder/08-tessinska/13.jpg',
-            'bilder/08-tessinska/14.jpg',
-            'bilder/08-tessinska/15.jpg'
-        ]
-    },
-    {
-        id: 'objekt-09',
-        cover: 'bilder/09-villagatan/omslag.jpg',
-        title: 'Villagatan',
-        location: 'Villagatan',
-        images: [
-            'bilder/09-villagatan/01.jpg',
-            'bilder/09-villagatan/02.jpg',
-            'bilder/09-villagatan/03.jpg',
-            'bilder/09-villagatan/04.jpg',
-            'bilder/09-villagatan/05.jpg',
-            'bilder/09-villagatan/06.jpg',
-            'bilder/09-villagatan/07.jpg',
-            'bilder/09-villagatan/08.jpg',
-            'bilder/09-villagatan/09.jpg',
-            'bilder/09-villagatan/10.jpg',
-            'bilder/09-villagatan/11.jpg',
-            'bilder/09-villagatan/12.jpg',
-            'bilder/09-villagatan/13.jpg',
-            'bilder/09-villagatan/14.jpg'
-        ]
-    }
-];
+        // ========== DINA 6 PROJEKT ==========
+        const projects = [
+            {
+                id: 'objekt-01',
+                cover: 'bilder/01-villagatan/omslag.jpg',
+                title: 'Villagatan',
+                location: 'Villagatan',
+                images: [
+                    'bilder/01-villagatan/01.jpg',
+                    'bilder/01-villagatan/02.jpg',
+                    'bilder/01-villagatan/03.jpg',
+                    'bilder/01-villagatan/04.jpg',
+                    'bilder/01-villagatan/05.jpg',
+                    'bilder/01-villagatan/06.jpg',
+                    'bilder/01-villagatan/07.jpg',
+                    'bilder/01-villagatan/08.jpg',
+                    'bilder/01-villagatan/09.jpg',
+                    'bilder/01-villagatan/10.jpg',
+                    'bilder/01-villagatan/11.jpg',
+                    'bilder/01-villagatan/12.jpg',
+                    'bilder/01-villagatan/13.jpg'
+                ]
+            },
+            {
+                id: 'objekt-02',
+                cover: 'bilder/02-kaptensgatan/omslag.jpg',
+                title: 'Kaptensgatan',
+                location: 'Kaptensgatan',
+                images: [
+                    'bilder/02-kaptensgatan/01.jpg',
+                    'bilder/02-kaptensgatan/02.jpg',
+                    'bilder/02-kaptensgatan/03.jpg',
+                    'bilder/02-kaptensgatan/04.jpg',
+                    'bilder/02-kaptensgatan/05.jpg',
+                    'bilder/02-kaptensgatan/06.jpg',
+                    'bilder/02-kaptensgatan/07.jpg',
+                    'bilder/02-kaptensgatan/08.jpg',
+                    'bilder/02-kaptensgatan/09.jpg'
+                ]
+            },
+            {
+                id: 'objekt-03',
+                cover: 'bilder/03-djursholm/omslag.jpg',
+                title: 'Djursholm',
+                location: 'Djursholm',
+                images: [
+                    'bilder/03-djursholm/01.jpg',
+                    'bilder/03-djursholm/02.jpg',
+                    'bilder/03-djursholm/03.jpg',
+                    'bilder/03-djursholm/04.jpg',
+                    'bilder/03-djursholm/05.jpg',
+                    'bilder/03-djursholm/06.jpg',
+                    'bilder/03-djursholm/07.jpg',
+                    'bilder/03-djursholm/08.jpg',
+                    'bilder/03-djursholm/09.jpg',
+                    'bilder/03-djursholm/10.jpg'
+                ]
+            },
+            {
+                id: 'objekt-04',
+                cover: 'bilder/04-ostermalmsgatan/omslag.jpg',
+                title: 'Östermalmsgatan',
+                location: 'Östermalmsgatan',
+                images: [
+                    'bilder/04-ostermalmsgatan/01.jpg',
+                    'bilder/04-ostermalmsgatan/02.jpg',
+                    'bilder/04-ostermalmsgatan/03.jpg',
+                    'bilder/04-ostermalmsgatan/04.jpg',
+                    'bilder/04-ostermalmsgatan/05.jpg',
+                    'bilder/04-ostermalmsgatan/06.jpg',
+                    'bilder/04-ostermalmsgatan/07.jpg',
+                    'bilder/04-ostermalmsgatan/08.jpg',
+                    'bilder/04-ostermalmsgatan/09.jpg',
+                    'bilder/04-ostermalmsgatan/10.jpg',
+                    'bilder/04-ostermalmsgatan/11.jpg',
+                    'bilder/04-ostermalmsgatan/12.jpg',
+                    'bilder/04-ostermalmsgatan/13.jpg',
+                    'bilder/04-ostermalmsgatan/14.jpg',
+                    'bilder/04-ostermalmsgatan/15.jpg',
+                    'bilder/04-ostermalmsgatan/16.jpg',
+                    'bilder/04-ostermalmsgatan/17.jpg',
+                    'bilder/04-ostermalmsgatan/18.jpg',
+                    'bilder/04-ostermalmsgatan/19.jpg',
+                    'bilder/04-ostermalmsgatan/20.jpg',
+                    'bilder/04-ostermalmsgatan/21.jpg'
+                ]
+            },
+            {
+                id: 'objekt-05',
+                cover: 'bilder/05-telegrafvagen/omslag.jpg',
+                title: 'Telegrafvägen',
+                location: 'Telegrafvägen',
+                images: [
+                    'bilder/05-telegrafvagen/01.jpg',
+                    'bilder/05-telegrafvagen/02.jpg',
+                    'bilder/05-telegrafvagen/03.jpg',
+                    'bilder/05-telegrafvagen/04.jpg',
+                    'bilder/05-telegrafvagen/05.jpg',
+                    'bilder/05-telegrafvagen/06.jpg',
+                    'bilder/05-telegrafvagen/07.jpg',
+                    'bilder/05-telegrafvagen/08.jpg'
+                ]
+            },
+            {
+                id: 'objekt-06',
+                cover: 'bilder/06-tessinska/omslag.jpg',
+                title: 'Tessinska',
+                location: 'Tessinska',
+                images: [
+                    'bilder/06-tessinska/01.jpg',
+                    'bilder/06-tessinska/02.jpg',
+                    'bilder/06-tessinska/03.jpg',
+                    'bilder/06-tessinska/04.jpg',
+                    'bilder/06-tessinska/05.jpg',
+                    'bilder/06-tessinska/06.jpg',
+                    'bilder/06-tessinska/07.jpg',
+                    'bilder/06-tessinska/08.jpg',
+                    'bilder/06-tessinska/09.jpg',
+                    'bilder/06-tessinska/10.jpg',
+                    'bilder/06-tessinska/11.jpg',
+                    'bilder/06-tessinska/12.jpg',
+                    'bilder/06-tessinska/13.jpg',
+                    'bilder/06-tessinska/14.jpg',
+                    'bilder/06-tessinska/15.jpg'
+                ]
+            }
+        ];
+
         // ========== BYGG PORTFOLIO-STARTSIDAN ==========
         const gallery = document.getElementById('gallery');
 
@@ -1114,4 +1018,10 @@
         });
     </script>
 </body>
-</html>
+</html>'''
+
+# Save to output
+with open('/mnt/agents/output/index.html', 'w', encoding='utf-8') as f:
+    f.write(html_content)
+
+print(f"Saved! File size: {len(html_content)} characters")
