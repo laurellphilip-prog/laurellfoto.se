@@ -283,49 +283,29 @@ html_content = '''<!DOCTYPE html>
             font-size: 1.2rem;
         }
 
-        /* FLEX GALLERY – bilder i rätt ordning, rad för rad, med flexibla proportioner */
+        /* MASONRY GALLERY */
         .project-gallery {
             padding: 3rem 5%;
             max-width: 1400px;
             margin: 0 auto;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1.5rem;
-            align-items: flex-start;
+            position: relative;
         }
 
         .gallery-img {
-            flex: 1 1 calc(50% - 0.75rem);
-            min-width: 300px;
+            position: absolute;
+            width: calc(50% - 0.75rem);
             cursor: pointer;
             overflow: hidden;
             background: #e0ddd8;
             opacity: 0;
             transform: translateY(40px);
-            animation: tileFadeIn 0.7s ease-out forwards;
+            transition: opacity 0.7s ease-out, transform 0.7s ease-out;
         }
 
-        .gallery-img:nth-child(1) { animation-delay: 0.04s; }
-        .gallery-img:nth-child(2) { animation-delay: 0.08s; }
-        .gallery-img:nth-child(3) { animation-delay: 0.12s; }
-        .gallery-img:nth-child(4) { animation-delay: 0.16s; }
-        .gallery-img:nth-child(5) { animation-delay: 0.20s; }
-        .gallery-img:nth-child(6) { animation-delay: 0.24s; }
-        .gallery-img:nth-child(7) { animation-delay: 0.28s; }
-        .gallery-img:nth-child(8) { animation-delay: 0.32s; }
-        .gallery-img:nth-child(9) { animation-delay: 0.36s; }
-        .gallery-img:nth-child(10) { animation-delay: 0.40s; }
-        .gallery-img:nth-child(11) { animation-delay: 0.44s; }
-        .gallery-img:nth-child(12) { animation-delay: 0.48s; }
-        .gallery-img:nth-child(13) { animation-delay: 0.52s; }
-        .gallery-img:nth-child(14) { animation-delay: 0.56s; }
-        .gallery-img:nth-child(15) { animation-delay: 0.60s; }
-        .gallery-img:nth-child(16) { animation-delay: 0.64s; }
-        .gallery-img:nth-child(17) { animation-delay: 0.68s; }
-        .gallery-img:nth-child(18) { animation-delay: 0.72s; }
-        .gallery-img:nth-child(19) { animation-delay: 0.76s; }
-        .gallery-img:nth-child(20) { animation-delay: 0.80s; }
-        .gallery-img:nth-child(21) { animation-delay: 0.84s; }
+        .gallery-img.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
 
         .gallery-img img {
             width: 100%;
@@ -336,11 +316,6 @@ html_content = '''<!DOCTYPE html>
 
         .gallery-img:hover img {
             transform: scale(1.02);
-        }
-
-        @keyframes tileFadeIn {
-            from { opacity: 0; transform: translateY(40px); }
-            to { opacity: 1; transform: translateY(0); }
         }
 
         /* LIGHTBOX */
@@ -606,7 +581,7 @@ html_content = '''<!DOCTYPE html>
             .mobile-menu-btn { display: block; }
             .gallery { grid-template-columns: 1fr; }
             .project-gallery { padding: 2rem 5%; }
-            .gallery-img { flex: 1 1 100%; min-width: unset; }
+            .gallery-img { width: 100% !important; left: 0 !important; }
             .about { grid-template-columns: 1fr; }
             .contact-info { flex-direction: column; gap: 2rem; }
             .hero-content h1 { font-size: 2.2rem; }
@@ -665,7 +640,7 @@ html_content = '''<!DOCTYPE html>
 
         <section class="about" id="about">
             <div class="about-image" id="about-img-container">
-                <img src="bilder/portratt.jpg?v=2" alt="Porträtt" onerror="this.style.display='none'; this.parentElement.innerHTML='Din bild här';">
+                <img src="bilder/portratt.jpg?v=3" alt="Porträtt" onerror="this.style.display='none'; this.parentElement.innerHTML='Din bild här';">
             </div>
             <div class="about-text fade-in">
                 <h2>Om mig</h2>
@@ -720,126 +695,126 @@ html_content = '''<!DOCTYPE html>
         const projects = [
             {
                 id: 'objekt-01',
-                cover: 'bilder/01-villagatan/omslag.jpg',
+                cover: 'bilder/01-villagatan/omslag.jpg?v=3',
                 title: 'Villagatan',
                 location: 'Villagatan',
                 images: [
-                    'bilder/01-villagatan/01.jpg',
-                    'bilder/01-villagatan/02.jpg',
-                    'bilder/01-villagatan/03.jpg',
-                    'bilder/01-villagatan/04.jpg',
-                    'bilder/01-villagatan/05.jpg',
-                    'bilder/01-villagatan/06.jpg',
-                    'bilder/01-villagatan/07.jpg',
-                    'bilder/01-villagatan/08.jpg',
-                    'bilder/01-villagatan/09.jpg',
-                    'bilder/01-villagatan/10.jpg',
-                    'bilder/01-villagatan/11.jpg',
-                    'bilder/01-villagatan/12.jpg',
-                    'bilder/01-villagatan/13.jpg'
+                    'bilder/01-villagatan/01.jpg?v=3',
+                    'bilder/01-villagatan/02.jpg?v=3',
+                    'bilder/01-villagatan/03.jpg?v=3',
+                    'bilder/01-villagatan/04.jpg?v=3',
+                    'bilder/01-villagatan/05.jpg?v=3',
+                    'bilder/01-villagatan/06.jpg?v=3',
+                    'bilder/01-villagatan/07.jpg?v=3',
+                    'bilder/01-villagatan/08.jpg?v=3',
+                    'bilder/01-villagatan/09.jpg?v=3',
+                    'bilder/01-villagatan/10.jpg?v=3',
+                    'bilder/01-villagatan/11.jpg?v=3',
+                    'bilder/01-villagatan/12.jpg?v=3',
+                    'bilder/01-villagatan/13.jpg?v=3'
                 ]
             },
             {
                 id: 'objekt-02',
-                cover: 'bilder/02-kaptensgatan/omslag.jpg',
+                cover: 'bilder/02-kaptensgatan/omslag.jpg?v=3',
                 title: 'Kaptensgatan',
                 location: 'Kaptensgatan',
                 images: [
-                    'bilder/02-kaptensgatan/01.jpg',
-                    'bilder/02-kaptensgatan/02.jpg',
-                    'bilder/02-kaptensgatan/03.jpg',
-                    'bilder/02-kaptensgatan/04.jpg',
-                    'bilder/02-kaptensgatan/05.jpg',
-                    'bilder/02-kaptensgatan/06.jpg',
-                    'bilder/02-kaptensgatan/07.jpg',
-                    'bilder/02-kaptensgatan/08.jpg',
-                    'bilder/02-kaptensgatan/09.jpg'
+                    'bilder/02-kaptensgatan/01.jpg?v=3',
+                    'bilder/02-kaptensgatan/02.jpg?v=3',
+                    'bilder/02-kaptensgatan/03.jpg?v=3',
+                    'bilder/02-kaptensgatan/04.jpg?v=3',
+                    'bilder/02-kaptensgatan/05.jpg?v=3',
+                    'bilder/02-kaptensgatan/06.jpg?v=3',
+                    'bilder/02-kaptensgatan/07.jpg?v=3',
+                    'bilder/02-kaptensgatan/08.jpg?v=3',
+                    'bilder/02-kaptensgatan/09.jpg?v=3'
                 ]
             },
             {
                 id: 'objekt-03',
-                cover: 'bilder/03-djursholm/omslag.jpg',
+                cover: 'bilder/03-djursholm/omslag.jpg?v=3',
                 title: 'Djursholm',
                 location: 'Djursholm',
                 images: [
-                    'bilder/03-djursholm/01.jpg',
-                    'bilder/03-djursholm/02.jpg',
-                    'bilder/03-djursholm/03.jpg',
-                    'bilder/03-djursholm/04.jpg',
-                    'bilder/03-djursholm/05.jpg',
-                    'bilder/03-djursholm/06.jpg',
-                    'bilder/03-djursholm/07.jpg',
-                    'bilder/03-djursholm/08.jpg',
-                    'bilder/03-djursholm/09.jpg',
-                    'bilder/03-djursholm/10.jpg'
+                    'bilder/03-djursholm/01.jpg?v=3',
+                    'bilder/03-djursholm/02.jpg?v=3',
+                    'bilder/03-djursholm/03.jpg?v=3',
+                    'bilder/03-djursholm/04.jpg?v=3',
+                    'bilder/03-djursholm/05.jpg?v=3',
+                    'bilder/03-djursholm/06.jpg?v=3',
+                    'bilder/03-djursholm/07.jpg?v=3',
+                    'bilder/03-djursholm/08.jpg?v=3',
+                    'bilder/03-djursholm/09.jpg?v=3',
+                    'bilder/03-djursholm/10.jpg?v=3'
                 ]
             },
             {
                 id: 'objekt-04',
-                cover: 'bilder/04-ostermalmsgatan/omslag.jpg',
+                cover: 'bilder/04-ostermalmsgatan/omslag.jpg?v=3',
                 title: 'Östermalmsgatan',
                 location: 'Östermalmsgatan',
                 images: [
-                    'bilder/04-ostermalmsgatan/01.jpg',
-                    'bilder/04-ostermalmsgatan/02.jpg',
-                    'bilder/04-ostermalmsgatan/03.jpg',
-                    'bilder/04-ostermalmsgatan/04.jpg',
-                    'bilder/04-ostermalmsgatan/05.jpg',
-                    'bilder/04-ostermalmsgatan/06.jpg',
-                    'bilder/04-ostermalmsgatan/07.jpg',
-                    'bilder/04-ostermalmsgatan/08.jpg',
-                    'bilder/04-ostermalmsgatan/09.jpg',
-                    'bilder/04-ostermalmsgatan/10.jpg',
-                    'bilder/04-ostermalmsgatan/11.jpg',
-                    'bilder/04-ostermalmsgatan/12.jpg',
-                    'bilder/04-ostermalmsgatan/13.jpg',
-                    'bilder/04-ostermalmsgatan/14.jpg',
-                    'bilder/04-ostermalmsgatan/15.jpg',
-                    'bilder/04-ostermalmsgatan/16.jpg',
-                    'bilder/04-ostermalmsgatan/17.jpg',
-                    'bilder/04-ostermalmsgatan/18.jpg',
-                    'bilder/04-ostermalmsgatan/19.jpg',
-                    'bilder/04-ostermalmsgatan/20.jpg',
-                    'bilder/04-ostermalmsgatan/21.jpg'
+                    'bilder/04-ostermalmsgatan/01.jpg?v=3',
+                    'bilder/04-ostermalmsgatan/02.jpg?v=3',
+                    'bilder/04-ostermalmsgatan/03.jpg?v=3',
+                    'bilder/04-ostermalmsgatan/04.jpg?v=3',
+                    'bilder/04-ostermalmsgatan/05.jpg?v=3',
+                    'bilder/04-ostermalmsgatan/06.jpg?v=3',
+                    'bilder/04-ostermalmsgatan/07.jpg?v=3',
+                    'bilder/04-ostermalmsgatan/08.jpg?v=3',
+                    'bilder/04-ostermalmsgatan/09.jpg?v=3',
+                    'bilder/04-ostermalmsgatan/10.jpg?v=3',
+                    'bilder/04-ostermalmsgatan/11.jpg?v=3',
+                    'bilder/04-ostermalmsgatan/12.jpg?v=3',
+                    'bilder/04-ostermalmsgatan/13.jpg?v=3',
+                    'bilder/04-ostermalmsgatan/14.jpg?v=3',
+                    'bilder/04-ostermalmsgatan/15.jpg?v=3',
+                    'bilder/04-ostermalmsgatan/16.jpg?v=3',
+                    'bilder/04-ostermalmsgatan/17.jpg?v=3',
+                    'bilder/04-ostermalmsgatan/18.jpg?v=3',
+                    'bilder/04-ostermalmsgatan/19.jpg?v=3',
+                    'bilder/04-ostermalmsgatan/20.jpg?v=3',
+                    'bilder/04-ostermalmsgatan/21.jpg?v=3'
                 ]
             },
             {
                 id: 'objekt-05',
-                cover: 'bilder/05-telegrafvagen/omslag.jpg',
+                cover: 'bilder/05-telegrafvagen/omslag.jpg?v=3',
                 title: 'Telegrafvägen',
                 location: 'Telegrafvägen',
                 images: [
-                    'bilder/05-telegrafvagen/01.jpg',
-                    'bilder/05-telegrafvagen/02.jpg',
-                    'bilder/05-telegrafvagen/03.jpg',
-                    'bilder/05-telegrafvagen/04.jpg',
-                    'bilder/05-telegrafvagen/05.jpg',
-                    'bilder/05-telegrafvagen/06.jpg',
-                    'bilder/05-telegrafvagen/07.jpg',
-                    'bilder/05-telegrafvagen/08.jpg'
+                    'bilder/05-telegrafvagen/01.jpg?v=3',
+                    'bilder/05-telegrafvagen/02.jpg?v=3',
+                    'bilder/05-telegrafvagen/03.jpg?v=3',
+                    'bilder/05-telegrafvagen/04.jpg?v=3',
+                    'bilder/05-telegrafvagen/05.jpg?v=3',
+                    'bilder/05-telegrafvagen/06.jpg?v=3',
+                    'bilder/05-telegrafvagen/07.jpg?v=3',
+                    'bilder/05-telegrafvagen/08.jpg?v=3'
                 ]
             },
             {
                 id: 'objekt-06',
-                cover: 'bilder/06-tessinska/omslag.jpg',
+                cover: 'bilder/06-tessinska/omslag.jpg?v=3',
                 title: 'Tessinska',
                 location: 'Tessinska',
                 images: [
-                    'bilder/06-tessinska/01.jpg',
-                    'bilder/06-tessinska/02.jpg',
-                    'bilder/06-tessinska/03.jpg',
-                    'bilder/06-tessinska/04.jpg',
-                    'bilder/06-tessinska/05.jpg',
-                    'bilder/06-tessinska/06.jpg',
-                    'bilder/06-tessinska/07.jpg',
-                    'bilder/06-tessinska/08.jpg',
-                    'bilder/06-tessinska/09.jpg',
-                    'bilder/06-tessinska/10.jpg',
-                    'bilder/06-tessinska/11.jpg',
-                    'bilder/06-tessinska/12.jpg',
-                    'bilder/06-tessinska/13.jpg',
-                    'bilder/06-tessinska/14.jpg',
-                    'bilder/06-tessinska/15.jpg'
+                    'bilder/06-tessinska/01.jpg?v=3',
+                    'bilder/06-tessinska/02.jpg?v=3',
+                    'bilder/06-tessinska/03.jpg?v=3',
+                    'bilder/06-tessinska/04.jpg?v=3',
+                    'bilder/06-tessinska/05.jpg?v=3',
+                    'bilder/06-tessinska/06.jpg?v=3',
+                    'bilder/06-tessinska/07.jpg?v=3',
+                    'bilder/06-tessinska/08.jpg?v=3',
+                    'bilder/06-tessinska/09.jpg?v=3',
+                    'bilder/06-tessinska/10.jpg?v=3',
+                    'bilder/06-tessinska/11.jpg?v=3',
+                    'bilder/06-tessinska/12.jpg?v=3',
+                    'bilder/06-tessinska/13.jpg?v=3',
+                    'bilder/06-tessinska/14.jpg?v=3',
+                    'bilder/06-tessinska/15.jpg?v=3'
                 ]
             }
         ];
@@ -874,7 +849,7 @@ html_content = '''<!DOCTYPE html>
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
-        // ========== PROJEKTGALLERI ==========
+        // ========== PROJEKTGALLERI MED MASONRY ==========
         let currentProject = null;
         let currentLightboxIndex = 0;
         let slideshowInterval = null;
@@ -892,6 +867,7 @@ html_content = '''<!DOCTYPE html>
             currentProject.images.forEach((img, index) => {
                 const div = document.createElement('div');
                 div.className = 'gallery-img';
+                div.dataset.index = index;
                 div.innerHTML = `<img src="${img}" alt="${currentProject.title}" loading="lazy" onerror="this.parentElement.style.background='#d0ccc7'; this.style.display='none'; this.parentElement.innerHTML='<div style=\\'display:flex;align-items:center;justify-content:center;height:100%;color:#666;\\'>Bild kunde inte laddas</div>'">`;
                 div.onclick = () => openLightbox(index);
                 projectGallery.appendChild(div);
@@ -900,7 +876,60 @@ html_content = '''<!DOCTYPE html>
             document.getElementById('project-page').classList.add('active');
             document.body.style.overflow = 'hidden';
             window.scrollTo(0, 0);
+
+            // Kör masonry-layout när bilderna laddats
+            setTimeout(() => layoutMasonry(), 100);
         }
+
+        function layoutMasonry() {
+            const container = document.getElementById('project-gallery');
+            const items = Array.from(container.querySelectorAll('.gallery-img'));
+            if (items.length === 0) return;
+
+            const gap = 24; // 1.5rem
+            const isMobile = window.innerWidth <= 768;
+            const cols = isMobile ? 1 : 2;
+            const colWidth = isMobile ? container.clientWidth : (container.clientWidth - gap) / 2;
+
+            const colHeights = new Array(cols).fill(0);
+
+            items.forEach((item, i) => {
+                const img = item.querySelector('img');
+                const imgHeight = img.naturalHeight || img.height || 400;
+                const imgWidth = img.naturalWidth || img.width || 600;
+                const aspectRatio = imgHeight / imgWidth;
+                const itemHeight = colWidth * aspectRatio;
+
+                // Hitta kortaste kolumnen
+                const shortestCol = colHeights.indexOf(Math.min(...colHeights));
+
+                item.style.width = colWidth + 'px';
+                item.style.left = isMobile ? '0' : (shortestCol * (colWidth + gap)) + 'px';
+                item.style.top = colHeights[shortestCol] + 'px';
+
+                colHeights[shortestCol] += itemHeight + gap;
+
+                // Fade in med fördröjning
+                setTimeout(() => {
+                    item.classList.add('visible');
+                }, i * 60);
+            });
+
+            // Sätt container-höjd
+            const maxHeight = Math.max(...colHeights);
+            container.style.height = (maxHeight - gap) + 'px';
+        }
+
+        // Omför vid resize
+        let resizeTimeout;
+        window.addEventListener('resize', () => {
+            clearTimeout(resizeTimeout);
+            resizeTimeout = setTimeout(() => {
+                if (document.getElementById('project-page').classList.contains('active')) {
+                    layoutMasonry();
+                }
+            }, 250);
+        });
 
         function closeProject() {
             document.getElementById('project-page').classList.remove('active');
