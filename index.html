@@ -877,8 +877,41 @@ html_content = '''<!DOCTYPE html>
             document.body.style.overflow = 'hidden';
             window.scrollTo(0, 0);
 
-            // Kör masonry-layout när bilderna laddats
-            setTimeout(() => layoutMasonry(), 100);
+            // Vänta tills alla bilder laddats innan masonry körs
+            waitForImagesAndLayout();
+        }
+
+        function waitForImagesAndLayout() {
+            const container = document.getElementById('project-gallery');
+            const images = Array.from(container.querySelectorAll('img'));
+            
+            if (images.length === 0) return;
+
+            let loadedCount = 0;
+            const totalImages = images.length;
+
+            function checkAllLoaded() {
+                loadedCount++;
+                if (loadedCount >= totalImages) {
+                    layoutMasonry();
+                }
+            }
+
+            images.forEach(img => {
+                if (img.complete && img.naturalHeight !== 0) {
+                    checkAllLoaded();
+                } else {
+                    img.addEventListener('load', checkAllLoaded, { once: true });
+                    img.addEventListener('error', checkAllLoaded, { once: true });
+                }
+            });
+
+            // Fallback: om bilderna tar för lång tid, kör ändå efter 3 sekunder
+            setTimeout(() => {
+                if (loadedCount < totalImages) {
+                    layoutMasonry();
+                }
+            }, 3000);
         }
 
         function layoutMasonry() {
@@ -889,7 +922,8 @@ html_content = '''<!DOCTYPE html>
             const gap = 24; // 1.5rem
             const isMobile = window.innerWidth <= 768;
             const cols = isMobile ? 1 : 2;
-            const colWidth = isMobile ? container.clientWidth : (container.clientWidth - gap) / 2;
+            const containerWidth = container.clientWidth;
+            const colWidth = isMobile ? containerWidth : (containerWidth - gap) / 2;
 
             const colHeights = new Array(cols).fill(0);
 
